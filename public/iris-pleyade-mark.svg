@@ -1,0 +1,23 @@
+<svg width="240" height="240" viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="gold" x1="36" y1="29" x2="208" y2="219" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F4DC8A"/>
+      <stop offset=".42" stop-color="#D8B866"/>
+      <stop offset="1" stop-color="#A97931"/>
+    </linearGradient>
+  </defs>
+  <path d="M198.5 58.5C180.4 31.1 149.5 13 114.4 13 58.4 13 13 58.4 13 114.4c0 49 34.8 89.9 81 99.4" stroke="url(#gold)" stroke-width="5.4" stroke-linecap="round"/>
+  <path d="M211.3 87c2.3 8.7 3.5 17.8 3.5 27.4 0 48.6-34.1 89.2-79.6 99.1" stroke="url(#gold)" stroke-width="5.4" stroke-linecap="round"/>
+  <path d="M22.6 87C34 47.1 70.7 18 114.3 18c30 0 56.8 13.8 74.3 35.4" stroke="#F4DC8A" stroke-opacity=".36" stroke-width="1.2" stroke-linecap="round"/>
+  <path d="M51.4 146.2c14.9 5.4 28.5 13.3 40.2 25.1 8.6 8.7 13.1 19.5 13 32.3-14.5-1.7-28.3-5.7-39.4-16.2-10.7-10.2-15.8-24.2-19-38.7-.8-3.5 1.7-3.7 5.2-2.5Z" fill="url(#gold)"/>
+  <path d="M48.8 148.3c11.8 6.3 21.8 14.2 30.8 24.3" stroke="#F6DEA0" stroke-opacity=".72" stroke-width="2" stroke-linecap="round"/>
+  <path d="M177.3 146.2c-14.9 5.4-28.5 13.3-40.2 25.1-8.6 8.7-13.1 19.5-13 32.3 14.5-1.7 28.3-5.7 39.4-16.2 10.7-10.2 15.8-24.2 19-38.7.8-3.5-1.7-3.7-5.2-2.5Z" fill="url(#gold)"/>
+  <path d="M179.9 148.3c-11.8 6.3-21.8 14.2-30.8 24.3" stroke="#F6DEA0" stroke-opacity=".72" stroke-width="2" stroke-linecap="round"/>
+  <path d="m114 76 3.3 8.7 8.7 3.3-8.7 3.3-3.3 8.7-3.3-8.7-8.7-3.3 8.7-3.3L114 76Z" fill="url(#gold)"/>
+  <path d="m114 113 4.2 11.1 11.1 4.2-11.1 4.2-4.2 11.1-4.2-11.1-11.1-4.2 11.1-4.2L114 113Z" fill="url(#gold)"/>
+  <path d="m88.5 101 2.6 6.9 6.9 2.6-6.9 2.6-2.6 6.9-2.6-6.9-6.9-2.6 6.9-2.6 2.6-6.9Z" fill="url(#gold)"/>
+  <path d="m140 98 2.7 7.3 7.3 2.7-7.3 2.7-2.7 7.3-2.7-7.3-7.3-2.7 7.3-2.7L140 98Z" fill="url(#gold)"/>
+  <path d="m93 132 2.2 5.8L101 140l-5.8 2.2L93 148l-2.2-5.8L85 140l5.8-2.2L93 132Z" fill="url(#gold)"/>
+  <path d="m139 138 2.2 5.8 5.8 2.2-5.8 2.2L139 154l-2.2-5.8L131 146l5.8-2.2L139 138Z" fill="url(#gold)"/>
+  <path d="m108 153 2.2 5.8 5.8 2.2-5.8 2.2L108 169l-2.2-5.8L100 161l5.8-2.2L108 153Z" fill="url(#gold)"/>
+</svg>
