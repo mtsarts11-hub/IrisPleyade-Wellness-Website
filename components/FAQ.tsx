@@ -1,13 +1,15 @@
 import { SectionHeading } from "@/components/SectionHeading";
+import { SectionCosmos } from "@/components/SectionCosmos";
 import { faqs } from "@/data/site";
 
 export function FAQ() {
   return (
     <section
       id="faq"
-      className="border-y border-gold-light/10 bg-gold-light/[0.025] py-24 sm:py-32"
+      className="relative overflow-hidden border-y border-gold-light/10 bg-gold-light/[0.025] py-24 sm:py-32"
     >
-      <div className="mx-auto grid max-w-7xl gap-10 px-5 sm:px-8 lg:grid-cols-[.72fr_1.28fr] lg:gap-20">
+      <SectionCosmos variant="faq" />
+      <div className="relative mx-auto grid max-w-7xl gap-10 px-5 sm:px-8 lg:grid-cols-[.72fr_1.28fr] lg:gap-20">
         <div>
           <SectionHeading
             eyebrow="Todo lo que necesitas saber"

@@ -1,3 +1,4 @@
+import { SectionCosmos } from "@/components/SectionCosmos";
 import { WHATSAPP_URL } from "@/data/site";
 
 const trustItems = [
@@ -11,9 +12,10 @@ export function TrustBar() {
   return (
     <section
       aria-label="Información destacada"
-      className="border-b border-gold-light/10 bg-gold-light/[0.035]"
+      className="relative overflow-hidden border-b border-gold-light/10 bg-gold-light/[0.035]"
     >
-      <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-center gap-x-8 gap-y-3 px-5 py-5 sm:px-8">
+      <SectionCosmos variant="bar" />
+      <div className="relative mx-auto flex max-w-7xl flex-wrap items-center justify-center gap-x-8 gap-y-3 px-5 py-5 sm:px-8">
         {trustItems.map((item, index) => (
           <div key={item} className="flex items-center gap-8">
             {index ? <span className="hidden h-1 w-1 rounded-full bg-gold sm:block" /> : null}

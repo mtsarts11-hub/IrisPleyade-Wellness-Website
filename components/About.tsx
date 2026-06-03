@@ -2,6 +2,7 @@ import Image from "next/image";
 import { aboutHighlights } from "@/data/site";
 import { CelestialOrnament } from "@/components/CelestialOrnament";
 import { SectionHeading } from "@/components/SectionHeading";
+import { SectionCosmos } from "@/components/SectionCosmos";
 
 export function About() {
   return (
@@ -13,6 +14,7 @@ export function About() {
         variant="constellation"
         className="-right-24 top-10 h-72 w-72 opacity-35"
       />
+      <SectionCosmos variant="about" />
       <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-5 sm:px-8 lg:grid-cols-[.85fr_1.15fr] lg:gap-20">
         <div className="relative mx-auto w-full max-w-md">
           <div className="absolute -left-5 -top-5 h-full w-full rounded-[10rem_10rem_1rem_1rem] border border-gold-light/20" />

@@ -71,18 +71,21 @@ export function Hero() {
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_12%_30%,rgba(255,255,255,.95),transparent_42%),radial-gradient(circle_at_78%_22%,rgba(233,207,170,.22),transparent_30%)]" />
 
       <div className="absolute inset-0 hidden lg:block">
-        <Image
-          src="/images/hero-iris-standing-v4.jpg"
-          alt="Mujer disfrutando de un momento de bienestar y calma"
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover object-center"
-        />
+        <div className="hero-desktop-portrait">
+          <Image
+            src="/images/hero-iris-hq-v2.jpg"
+            alt="Mujer disfrutando de un momento de bienestar y calma"
+            fill
+            quality={95}
+            priority
+            sizes="(min-width: 1024px) 1600px, 100vw"
+            className="object-cover object-right"
+          />
+        </div>
         <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(247,240,231,.98)_0%,rgba(247,240,231,.94)_36%,rgba(247,240,231,.55)_53%,rgba(247,240,231,.05)_72%,transparent_100%)]" />
       </div>
 
-      <OrbitSystem className="hero-orbit-system--portrait right-[2%] top-[7%] hidden h-[700px] w-[700px] opacity-90 lg:block" />
+      <OrbitSystem className="hero-orbit-system--portrait hero-desktop-orbit hidden h-[700px] w-[700px] opacity-90 lg:block" />
 
       <div className="relative z-10 mx-auto flex min-h-[790px] max-w-7xl items-start px-5 pb-12 pt-12 sm:px-8 lg:min-h-[790px] lg:items-center lg:pb-24 lg:pt-16">
         <div className="w-full max-w-[650px]">
@@ -107,7 +110,7 @@ export function Hero() {
 
           <div className="mt-9 flex flex-col gap-3 sm:flex-row">
             <a href={BOOKING_URL} className="gold-button justify-center px-8 py-4">
-              Reserva tu cita
+              Regala un masaje
             </a>
             <a
               href="#servicios"
@@ -119,11 +122,12 @@ export function Hero() {
 
           <figure className="relative mt-9 aspect-[4/5] overflow-hidden rounded-[9rem_9rem_1.5rem_1.5rem] border border-gold-light/20 bg-ink-soft shadow-gold-soft lg:hidden">
             <Image
-              src="/images/hero-iris-standing-v4.jpg"
+              src="/images/hero-iris-hq-v2.jpg"
               alt="Mujer disfrutando de un momento de bienestar y calma"
               fill
+              quality={95}
               priority
-              sizes="calc(100vw - 40px)"
+              sizes="800px"
               className="object-cover object-[72%_center]"
             />
             <OrbitSystem className="hero-orbit-system--portrait -left-[12%] top-[4%] h-[112%] w-[130%] opacity-80" />

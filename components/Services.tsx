@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { CelestialOrnament } from "@/components/CelestialOrnament";
 import { SectionHeading } from "@/components/SectionHeading";
+import { SectionCosmos } from "@/components/SectionCosmos";
 import { BOOKING_URL, serviceCategories } from "@/data/site";
 
 export function Services() {
@@ -11,6 +12,8 @@ export function Services() {
   const category = serviceCategories[activeIndex];
 
   useEffect(() => {
+    if (!window.matchMedia("(min-width: 768px)").matches) return;
+
     const timer = window.setInterval(() => {
       setActiveIndex((index) => (index + 1) % serviceCategories.length);
     }, 5600);
@@ -26,6 +29,7 @@ export function Services() {
     <section id="servicios" className="section-space relative overflow-hidden">
       <div className="pointer-events-none absolute -right-36 top-24 h-96 w-96 rounded-full bg-gold/5 blur-3xl" />
       <CelestialOrnament className="-left-24 top-16 h-72 w-72 opacity-35" />
+      <SectionCosmos variant="services" />
       <div className="relative mx-auto max-w-7xl px-5 sm:px-8">
         <SectionHeading
           eyebrow="Carta de servicios"
@@ -35,7 +39,7 @@ export function Services() {
 
         <div
           data-native-scroll
-          className="mt-10 flex gap-2 overflow-x-auto pb-3 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+          className="mt-10 hidden gap-2 overflow-x-auto pb-3 [scrollbar-width:none] md:flex [&::-webkit-scrollbar]:hidden"
         >
           {serviceCategories.map((item, index) => (
             <button
@@ -54,7 +58,81 @@ export function Services() {
           ))}
         </div>
 
-        <article className="luxury-card mt-5 grid overflow-hidden lg:grid-cols-[.9fr_1.1fr]">
+        <div className="mt-10 md:hidden">
+          <div className="flex items-center justify-between gap-4">
+            <p className="text-[10px] font-bold uppercase tracking-[0.24em] text-gold-light">
+              Desliza para ver todo
+            </p>
+            <p className="text-xs text-cream/45">
+              {String(serviceCategories.length).padStart(2, "0")} categorias
+            </p>
+          </div>
+
+          <div
+            data-native-scroll
+            className="service-mobile-scroll -mx-5 mt-4 flex snap-x gap-4 overflow-x-auto px-5 pb-5"
+            aria-label="Servicios de Iris Pleyade"
+          >
+            {serviceCategories.map((item, index) => (
+              <article
+                key={item.name}
+                className="service-mobile-card min-w-[86vw] snap-start overflow-hidden rounded-2xl border border-gold-light/20 bg-[linear-gradient(150deg,rgba(255,255,255,.86),rgba(242,235,224,.94))] shadow-gold-soft"
+              >
+                <div className="relative h-56 overflow-hidden">
+                  <Image
+                    src={item.image}
+                    alt={`Ambientacion de ${item.name} en Iris Pleyade`}
+                    fill
+                    sizes="86vw"
+                    className="object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#3d2e22]/70 via-[#3d2e22]/5 to-transparent" />
+                  <div className="absolute inset-x-0 bottom-0 p-5">
+                    <p className="text-[9px] font-bold uppercase tracking-[0.26em] text-[#ecd49d]">
+                      {String(index + 1).padStart(2, "0")} · {item.eyebrow}
+                    </p>
+                    <h3 className="mt-2 font-serif text-3xl leading-none text-white">
+                      {item.name}
+                    </h3>
+                  </div>
+                </div>
+
+                <div className="p-5">
+                  <p className="text-sm leading-6 text-cream/65">
+                    {item.description}
+                  </p>
+                  <ul
+                    data-native-scroll
+                    className="service-mobile-list mt-5 max-h-[330px] overflow-y-auto divide-y divide-gold-light/15 border-y border-gold-light/15 pr-2"
+                  >
+                    {item.services.map((service) => (
+                      <li
+                        key={service.name}
+                        className="flex items-start justify-between gap-4 py-4"
+                      >
+                        <div>
+                          <p className="font-serif text-xl leading-tight text-cream">
+                            {service.name}
+                          </p>
+                          {service.duration ? (
+                            <p className="mt-1 text-[10px] font-bold uppercase tracking-[0.18em] text-cream/40">
+                              {service.duration}
+                            </p>
+                          ) : null}
+                        </div>
+                        <p className="shrink-0 font-serif text-2xl text-gold-light">
+                          {service.price}
+                        </p>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+
+        <article className="luxury-card mt-5 hidden overflow-hidden md:grid lg:grid-cols-[.9fr_1.1fr]">
           <div className="relative min-h-[390px] overflow-hidden sm:min-h-[520px]">
             <Image
               key={category.image}
@@ -132,7 +210,7 @@ export function Services() {
                 </button>
               </div>
               <a href={BOOKING_URL} className="gold-button justify-center px-6 py-3.5">
-                Reserva tu cita
+                Regala un masaje
               </a>
             </div>
           </div>

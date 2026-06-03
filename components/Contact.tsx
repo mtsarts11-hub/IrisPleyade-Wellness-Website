@@ -1,6 +1,7 @@
 import { CelestialOrnament } from "@/components/CelestialOrnament";
 import { Icon } from "@/components/Icons";
 import { SectionHeading } from "@/components/SectionHeading";
+import { SectionCosmos } from "@/components/SectionCosmos";
 import { MAPS_URL, WHATSAPP_URL, site } from "@/data/site";
 
 const mapEmbedUrl =
@@ -13,6 +14,7 @@ export function Contact() {
         variant="constellation"
         className="-left-20 top-14 h-64 w-64 opacity-30"
       />
+      <SectionCosmos variant="contact" />
       <div className="relative mx-auto max-w-7xl px-5 sm:px-8">
         <SectionHeading
           eyebrow="Ven a conocernos"

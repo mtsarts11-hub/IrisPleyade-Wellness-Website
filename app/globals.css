@@ -82,19 +82,66 @@ summary {
   border-radius: 999px;
   height: var(--star-size);
   left: var(--star-x);
-  opacity: 0.32;
+  opacity: 0.42;
   position: absolute;
   top: var(--star-y);
   width: var(--star-size);
 }
 
 .cosmic-star--near {
-  opacity: 0.2;
+  opacity: 0.28;
 }
 
 .cosmic-star--gold {
   background: #ad7d3c;
   box-shadow: 0 0 7px rgba(173, 125, 60, 0.34);
+}
+
+.cosmic-starfield--sparkles {
+  transform: translate3d(0, var(--cosmic-scroll-far), 0);
+}
+
+.cosmic-cross-star {
+  animation: cosmic-cross-twinkle var(--spark-duration) ease-in-out
+    var(--spark-delay) infinite;
+  height: var(--spark-size);
+  left: var(--spark-x);
+  opacity: 0.34;
+  position: absolute;
+  top: var(--spark-y);
+  transform: rotate(var(--spark-rotate)) scale(0.9);
+  transform-origin: center;
+  width: var(--spark-size);
+  will-change: opacity, transform;
+}
+
+.cosmic-cross-star::before,
+.cosmic-cross-star::after {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(173, 125, 60, 0.7),
+    transparent
+  );
+  content: "";
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.cosmic-cross-star::before {
+  height: 1px;
+  width: 100%;
+}
+
+.cosmic-cross-star::after {
+  height: 100%;
+  width: 1px;
+}
+
+.cosmic-cross-star--soft {
+  opacity: 0.24;
 }
 
 .cosmic-comet {
@@ -206,6 +253,441 @@ summary {
   }
 }
 
+@keyframes cosmic-cross-twinkle {
+  0%,
+  100% {
+    opacity: 0.12;
+    transform: rotate(var(--spark-rotate)) scale(0.78);
+  }
+  45% {
+    opacity: 0.48;
+    transform: rotate(calc(var(--spark-rotate) + 12deg)) scale(1.08);
+  }
+}
+
+.section-cosmos {
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  position: absolute;
+  z-index: 0;
+}
+
+.section-cosmos-star {
+  animation: section-star-pulse 7.5s ease-in-out var(--section-star-delay)
+    infinite;
+  height: var(--section-star-size);
+  left: var(--section-star-x);
+  opacity: 0.58;
+  position: absolute;
+  top: var(--section-star-y);
+  transform: translate(-50%, -50%) rotate(18deg);
+  width: var(--section-star-size);
+  will-change: opacity, transform;
+}
+
+.section-cosmos-star::before,
+.section-cosmos-star::after {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(157, 113, 52, 0.82),
+    transparent
+  );
+  content: "";
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.section-cosmos-star::before {
+  height: 1px;
+  width: 100%;
+}
+
+.section-cosmos-star::after {
+  height: 100%;
+  width: 1px;
+}
+
+.section-cosmos-star--bright {
+  filter: drop-shadow(0 0 10px rgba(180, 135, 67, 0.42));
+  opacity: 0.78;
+}
+
+.section-cosmos-orbit {
+  border: 1px solid rgba(157, 113, 52, 0.24);
+  border-radius: 999px;
+  position: absolute;
+  transform: rotate(-18deg) scaleY(0.54);
+}
+
+.section-cosmos-orbit--one {
+  height: 420px;
+  width: 420px;
+}
+
+.section-cosmos-orbit--two {
+  border-style: dotted;
+  height: 560px;
+  opacity: 0.58;
+  width: 560px;
+}
+
+.section-cosmos-planet {
+  animation: section-planet-float 11s ease-in-out infinite alternate;
+  border-radius: 999px;
+  position: absolute;
+  will-change: transform;
+}
+
+.section-cosmos-planet--primary {
+  height: 34px;
+  width: 34px;
+}
+
+.section-cosmos-planet--saturn,
+.section-cosmos-planet--ringed {
+  background: radial-gradient(
+    circle at 35% 30%,
+    #f3dcc0 0 18%,
+    #c99b55 52%,
+    #93652f 100%
+  );
+  box-shadow: inset -8px -7px 14px rgba(95, 63, 34, 0.22),
+    0 0 30px rgba(180, 135, 67, 0.24);
+}
+
+.section-cosmos-planet--ringed {
+  background: radial-gradient(
+    circle at 38% 28%,
+    #fff3d9 0 16%,
+    #d8b36c 44%,
+    #b37a3a 100%
+  );
+  height: 28px;
+  width: 28px;
+}
+
+.section-cosmos-planet--saturn::before,
+.section-cosmos-planet--ringed::before {
+  border: 1px solid rgba(157, 113, 52, 0.64);
+  border-left-color: rgba(157, 113, 52, 0.2);
+  border-right-color: rgba(157, 113, 52, 0.2);
+  border-radius: 999px;
+  content: "";
+  height: 11px;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(-18deg);
+  width: 58px;
+}
+
+.section-cosmos-planet--ringed::before {
+  height: 9px;
+  transform: translate(-50%, -50%) rotate(20deg);
+  width: 48px;
+}
+
+.section-cosmos-planet--pearl {
+  background: radial-gradient(
+    circle at 32% 26%,
+    #fffaf0 0 15%,
+    #ead5b4 48%,
+    #c79c65 100%
+  );
+  box-shadow: inset -8px -8px 14px rgba(127, 89, 46, 0.18),
+    0 0 24px rgba(199, 156, 101, 0.28);
+}
+
+.section-cosmos-planet--aura {
+  background: radial-gradient(
+    circle at 38% 31%,
+    #fff4d8 0 14%,
+    #d7b771 42%,
+    #a3713b 100%
+  );
+  box-shadow: 0 0 0 9px rgba(180, 135, 67, 0.08),
+    0 0 36px rgba(180, 135, 67, 0.24);
+}
+
+.section-cosmos-planet--aura::before {
+  border: 1px solid rgba(157, 113, 52, 0.34);
+  border-radius: inherit;
+  content: "";
+  inset: -13px;
+  position: absolute;
+}
+
+.section-cosmos-planet--crescent {
+  background: #c99b55;
+  box-shadow: 0 0 20px rgba(180, 135, 67, 0.28);
+}
+
+.section-cosmos-planet--crescent::before {
+  background: #f8f2e9;
+  border-radius: inherit;
+  content: "";
+  inset: -1px -5px 1px 9px;
+  position: absolute;
+}
+
+.section-cosmos-planet--solar {
+  background: radial-gradient(
+    circle,
+    #fff2c4 0 12%,
+    #d5a14d 45%,
+    #9a6631 100%
+  );
+  box-shadow: 0 0 0 6px rgba(213, 161, 77, 0.08),
+    0 0 34px rgba(213, 161, 77, 0.3);
+}
+
+.section-cosmos-planet--solar::before {
+  background: conic-gradient(
+    from 0deg,
+    transparent 0 8deg,
+    rgba(157, 113, 52, 0.42) 8deg 10deg,
+    transparent 10deg 36deg
+  );
+  border-radius: inherit;
+  content: "";
+  inset: -11px;
+  opacity: 0.65;
+  position: absolute;
+}
+
+.section-cosmos-planet--nebula {
+  background: radial-gradient(
+      circle at 32% 26%,
+      rgba(255, 247, 228, 0.98) 0 14%,
+      transparent 15%
+    ),
+    linear-gradient(135deg, #ead2aa, #b48743 52%, #8b6131);
+  box-shadow: inset -8px -8px 15px rgba(91, 60, 32, 0.18),
+    0 0 30px rgba(180, 135, 67, 0.26);
+}
+
+.section-cosmos-planet--nebula::before {
+  background: linear-gradient(
+    120deg,
+    transparent 0 34%,
+    rgba(255, 248, 229, 0.38) 35% 41%,
+    transparent 42% 100%
+  );
+  border-radius: inherit;
+  content: "";
+  inset: 0;
+  position: absolute;
+}
+
+.section-cosmos-planet--moon {
+  background: rgba(157, 113, 52, 0.6);
+  box-shadow: 0 0 12px rgba(157, 113, 52, 0.2);
+  height: 7px;
+  opacity: 0.8;
+  width: 7px;
+}
+
+.section-cosmos-dust {
+  background-image: radial-gradient(
+    circle,
+    rgba(157, 113, 52, 0.44) 0 1px,
+    transparent 1.5px
+  );
+  background-size: 28px 28px;
+  height: 130px;
+  opacity: 0.58;
+  position: absolute;
+  width: 190px;
+}
+
+.section-cosmos-dust--one {
+  left: 5%;
+  top: 14%;
+}
+
+.section-cosmos-dust--two {
+  bottom: 9%;
+  right: 7%;
+  transform: rotate(8deg);
+}
+
+.section-cosmos--services .section-cosmos-planet--primary {
+  right: 9%;
+  top: 14%;
+}
+
+.section-cosmos--services .section-cosmos-planet--moon {
+  left: 13%;
+  top: 66%;
+}
+
+.section-cosmos--services .section-cosmos-orbit--one {
+  left: -190px;
+  top: 16%;
+}
+
+.section-cosmos--services .section-cosmos-orbit--two {
+  bottom: -210px;
+  right: -190px;
+}
+
+.section-cosmos--experiences .section-cosmos-planet--primary {
+  left: 8%;
+  top: 21%;
+}
+
+.section-cosmos--experiences .section-cosmos-planet--moon {
+  right: 14%;
+  top: 72%;
+}
+
+.section-cosmos--experiences .section-cosmos-orbit--one {
+  right: -150px;
+  top: 9%;
+}
+
+.section-cosmos--experiences .section-cosmos-orbit--two {
+  bottom: -260px;
+  left: 12%;
+}
+
+.section-cosmos--about .section-cosmos-planet--primary {
+  right: 12%;
+  top: 68%;
+}
+
+.section-cosmos--about .section-cosmos-planet--moon {
+  left: 10%;
+  top: 18%;
+}
+
+.section-cosmos--about .section-cosmos-orbit--one {
+  left: -170px;
+  top: 58%;
+}
+
+.section-cosmos--about .section-cosmos-orbit--two {
+  right: -210px;
+  top: -160px;
+}
+
+.section-cosmos--reviews .section-cosmos-planet--primary {
+  right: 8%;
+  top: 18%;
+}
+
+.section-cosmos--reviews .section-cosmos-planet--moon {
+  left: 7%;
+  top: 78%;
+}
+
+.section-cosmos--reviews .section-cosmos-orbit--one {
+  left: 10%;
+  top: -220px;
+}
+
+.section-cosmos--reviews .section-cosmos-orbit--two {
+  bottom: -240px;
+  right: 8%;
+}
+
+.section-cosmos--faq .section-cosmos-planet--primary {
+  left: 8%;
+  top: 70%;
+}
+
+.section-cosmos--faq .section-cosmos-planet--moon {
+  right: 11%;
+  top: 20%;
+}
+
+.section-cosmos--faq .section-cosmos-orbit--one {
+  right: -170px;
+  top: 24%;
+}
+
+.section-cosmos--faq .section-cosmos-orbit--two {
+  bottom: -240px;
+  left: -170px;
+}
+
+.section-cosmos--contact .section-cosmos-planet--primary {
+  right: 7%;
+  top: 13%;
+}
+
+.section-cosmos--contact .section-cosmos-planet--moon {
+  bottom: 17%;
+  left: 10%;
+}
+
+.section-cosmos--contact .section-cosmos-orbit--one {
+  left: -180px;
+  top: 12%;
+}
+
+.section-cosmos--contact .section-cosmos-orbit--two {
+  bottom: -230px;
+  right: 12%;
+}
+
+.section-cosmos--cta .section-cosmos-planet--primary {
+  right: 13%;
+  top: 28%;
+}
+
+.section-cosmos--cta .section-cosmos-planet--moon {
+  left: 16%;
+  top: 30%;
+}
+
+.section-cosmos--cta .section-cosmos-orbit--one {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(28deg) scaleY(0.5);
+}
+
+.section-cosmos--cta .section-cosmos-orbit--two {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(-32deg) scaleY(0.45);
+}
+
+.section-cosmos--bar {
+  opacity: 0.42;
+}
+
+.section-cosmos--bar .section-cosmos-planet,
+.section-cosmos--bar .section-cosmos-orbit,
+.section-cosmos--bar .section-cosmos-dust {
+  display: none;
+}
+
+@keyframes section-star-pulse {
+  0%,
+  100% {
+    opacity: 0.2;
+    transform: translate(-50%, -50%) rotate(0deg) scale(0.78);
+  }
+  50% {
+    opacity: 0.74;
+    transform: translate(-50%, -50%) rotate(28deg) scale(1.16);
+  }
+}
+
+@keyframes section-planet-float {
+  from {
+    transform: translate3d(0, 0, 0) rotate(-8deg);
+  }
+  to {
+    transform: translate3d(0, -9px, 0) rotate(7deg);
+  }
+}
+
 .celestial-ornament {
   pointer-events: none;
   position: absolute;
@@ -226,6 +708,32 @@ summary {
     rgba(0, 0, 0, 0.88) 27%,
     #000 44%
   );
+}
+
+.hero-desktop-portrait {
+  bottom: 0;
+  -webkit-mask-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(0, 0, 0, 0.24) 10%,
+    #000 24%
+  );
+  mask-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(0, 0, 0, 0.24) 10%,
+    #000 24%
+  );
+  overflow: hidden;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: clamp(700px, 58vw, 880px);
+}
+
+.hero-desktop-orbit {
+  right: max(1rem, calc((100vw - 1560px) / 2));
+  top: 7%;
 }
 
 .hero-orbit-system {
@@ -381,6 +889,35 @@ summary {
   opacity: 0.92;
 }
 
+.service-mobile-scroll {
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;
+  scroll-padding-inline: 1.25rem;
+  scrollbar-color: rgba(157, 113, 52, 0.45) rgba(157, 113, 52, 0.08);
+  scrollbar-width: thin;
+}
+
+.service-mobile-scroll::-webkit-scrollbar {
+  height: 6px;
+}
+
+.service-mobile-scroll::-webkit-scrollbar-track {
+  background: rgba(157, 113, 52, 0.08);
+  border-radius: 999px;
+}
+
+.service-mobile-scroll::-webkit-scrollbar-thumb {
+  background: rgba(157, 113, 52, 0.45);
+  border-radius: 999px;
+}
+
+.service-mobile-list {
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-y: contain;
+  scrollbar-color: rgba(157, 113, 52, 0.45) transparent;
+  scrollbar-width: thin;
+}
+
 @keyframes hero-orbit-rotate {
   from {
     transform: rotate(0deg);
@@ -499,9 +1036,32 @@ summary {
   .cosmic-starfield--near {
     display: none;
   }
+
+  .cosmic-cross-star {
+    opacity: 0.16;
+  }
+
+  .section-cosmos-orbit--two,
+  .section-cosmos-dust {
+    opacity: 0.34;
+  }
+
+  .section-cosmos-planet--primary {
+    transform: scale(0.82);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .cosmic-star,
+  .cosmic-cross-star {
+    animation-duration: 18s;
+  }
+
+  .section-cosmos-star,
+  .section-cosmos-planet {
+    animation-duration: 18s;
+  }
+
   .hero-orbit-system {
     animation-duration: 92s;
   }

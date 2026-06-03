@@ -1,5 +1,6 @@
 import { Icon } from "@/components/Icons";
 import { SectionHeading } from "@/components/SectionHeading";
+import { SectionCosmos } from "@/components/SectionCosmos";
 import { experiences } from "@/data/site";
 
 export function Experiences() {
@@ -10,7 +11,8 @@ export function Experiences() {
     >
       <div className="pointer-events-none absolute left-1/2 top-24 h-[420px] w-[420px] -translate-x-1/2 rounded-full border border-gold-light/10" />
       <div className="pointer-events-none absolute left-1/2 top-16 h-[540px] w-[540px] -translate-x-1/2 rounded-full border border-gold-light/[0.05]" />
-      <div className="mx-auto max-w-7xl px-5 sm:px-8">
+      <SectionCosmos variant="experiences" />
+      <div className="relative mx-auto max-w-7xl px-5 sm:px-8">
         <SectionHeading
           eyebrow="Regala un momento inolvidable"
           title="Experiencias y bonos regalo"

@@ -18,6 +18,16 @@ const stars = [
   [72, 5, 1, 7],
 ];
 
+const sparkleStars = [
+  [11, 38, 18, 13],
+  [28, 16, 12, 11],
+  [47, 92, 14, 15],
+  [58, 51, 10, 12],
+  [74, 27, 16, 14],
+  [86, 68, 12, 10],
+  [95, 12, 15, 16],
+];
+
 export function CosmicMotion() {
   useEffect(() => {
     const root = document.documentElement;
@@ -108,6 +118,26 @@ export function CosmicMotion() {
                 "--star-size": `${size + 1}px`,
                 "--star-duration": `${duration + 3}s`,
                 "--star-delay": `${(index % 5) * -1.7}s`,
+              } as CSSProperties
+            }
+          />
+        ))}
+      </div>
+      <div className="cosmic-starfield cosmic-starfield--sparkles">
+        {sparkleStars.map(([x, y, size, duration], index) => (
+          <span
+            key={`sparkle-${x}-${y}`}
+            className={`cosmic-cross-star ${
+              index % 2 === 0 ? "cosmic-cross-star--soft" : ""
+            }`}
+            style={
+              {
+                "--spark-x": `${x}%`,
+                "--spark-y": `${y}%`,
+                "--spark-size": `${size}px`,
+                "--spark-duration": `${duration}s`,
+                "--spark-delay": `${index * -1.9}s`,
+                "--spark-rotate": `${index * 18}deg`,
               } as CSSProperties
             }
           />

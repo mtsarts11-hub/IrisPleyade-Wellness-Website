@@ -247,28 +247,34 @@ export const aboutHighlights = [
 
 export const reviews = [
   {
-    quote: "Una experiencia única. Salí completamente relajada.",
-    name: "María G.",
+    quote:
+      "El masaje de Iris fue realmente de otro mundo. Fue más que trabajo corporal: profundamente espiritual y sanador. Su energía, intuición y tacto crearon una experiencia que me dejó completamente relajado, enraizado y renovado. Nunca había recibido un masaje así. Absolutamente increíble.",
+    name: "Nelson Gonzales · Google · 4 meses",
   },
   {
-    quote: "Iris transmite calma, profesionalidad y mucha sensibilidad.",
-    name: "Laura P.",
+    quote:
+      "Un masaje hecho con sensibilidad, técnica y mucha buena energía. Desde el primer momento transmite paz y cuidado en cada detalle. Salí leve, relajado y con ganas de volver. ¡Lo recomiendo mucho!",
+    name: "Thassio Freitas · Google · 5 meses",
   },
   {
-    quote: "El masaje fue increíble, cuidó cada detalle.",
-    name: "Carmen V.",
+    quote:
+      "Fantástico masaje con Iris, con una técnica excelente y un ambiente muy relajante. ¡100% recomendable!",
+    name: "Andrii Buniak · Google · 5 meses",
   },
   {
-    quote: "Un espacio con energía especial en pleno Valencia.",
-    name: "Andrea R.",
+    quote:
+      "Es un lugar increíble, lleno de buena energía y relajación. Fui con mi mujer y nos sentimos muy cómodos y tranquilos. Es experta y sabe cómo hacer el trabajo. Apreciamos mucho su profesionalidad.",
+    name: "Juan Acero · Google · 2 meses",
   },
   {
-    quote: "Volveré sin duda. Muy recomendable.",
-    name: "Sofía M.",
+    quote:
+      "Encontré este centro por casualidad y solo tengo elogios. El centro está en una calle de trato súper especial en todos los sentidos. Iris es increíblemente simpática y el masaje es muy profesional. En mi caso, fue un masaje para parejas. ¡Sin duda volveremos!",
+    name: "Eva Herrero · Google · 2 meses",
   },
   {
-    quote: "Más que un masaje, fue una experiencia completa.",
-    name: "Elena C.",
+    quote:
+      "Masaje relajante perfecto. Iris es muy profesional e innovadora. ¡Iré siempre que venga a Valencia! ¡La recomiendo muchísimo!",
+    name: "Ledysbel Castellanos · Google · 5 meses",
   },
 ];
 
@@ -276,7 +282,7 @@ export const faqs = [
   {
     question: "¿Cómo puedo reservar una cita?",
     answer:
-      "Puedes reservar directamente desde el botón «Reserva tu cita» o escribir por WhatsApp.",
+      "Puedes reservar directamente desde el botón «Regala un masaje» o escribir por WhatsApp.",
   },
   {
     question: "¿Puedo pagar por adelantado?",

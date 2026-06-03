@@ -66,7 +66,7 @@ export function Header() {
             ES
           </span>
           <a href={BOOKING_URL} className="gold-button px-5 py-3 text-[10px]">
-            Reserva tu cita
+            Regala un masaje
           </a>
         </div>
 
@@ -124,7 +124,7 @@ export function Header() {
             href={BOOKING_URL}
             className="gold-button mt-5 flex w-full justify-center py-3.5 text-xs"
           >
-            Reserva tu cita
+            Regala un masaje
           </a>
         </nav>
       </div>
