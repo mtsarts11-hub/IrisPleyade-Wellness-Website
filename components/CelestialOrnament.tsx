@@ -1,20 +1,19 @@
 type CelestialOrnamentProps = {
   className?: string;
-  variant?: "orbit" | "constellation";
+  variant?: "halo" | "sparkles";
 };
 
 export function CelestialOrnament({
   className = "",
-  variant = "orbit",
+  variant = "halo",
 }: CelestialOrnamentProps) {
   return (
     <div
       aria-hidden="true"
       className={`celestial-ornament celestial-ornament--${variant} ${className}`}
     >
-      <span className="celestial-orbit celestial-orbit--outer" />
-      <span className="celestial-orbit celestial-orbit--inner" />
-      <span className="celestial-orbit celestial-orbit--tilted" />
+      <span className="celestial-glow celestial-glow--one" />
+      <span className="celestial-glow celestial-glow--two" />
       <span className="celestial-spark celestial-spark--one">✦</span>
       <span className="celestial-spark celestial-spark--two">✧</span>
       <span className="celestial-spark celestial-spark--three">✦</span>

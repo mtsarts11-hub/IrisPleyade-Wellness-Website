@@ -4,8 +4,6 @@ import { SectionCosmos } from "@/components/SectionCosmos";
 export function FinalCTA() {
   return (
     <section className="cosmic-bg relative overflow-hidden border-y border-gold-light/10 py-24 sm:py-32">
-      <div className="pointer-events-none absolute left-1/2 top-1/2 h-72 w-72 -translate-x-1/2 -translate-y-1/2 rounded-full border border-gold-light/15" />
-      <div className="pointer-events-none absolute left-1/2 top-1/2 h-[430px] w-[430px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-gold-light/[0.06]" />
       <SectionCosmos variant="cta" />
       <div className="relative mx-auto max-w-4xl px-5 text-center sm:px-8">
         <span className="text-xl text-gold-light">✦</span>

@@ -1,7 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { BOOKING_URL, navItems } from "@/data/site";
+import { BOOKING_URL, INSTAGRAM_URL, navItems } from "@/data/site";
+import { Icon } from "@/components/Icons";
 import { Logo } from "@/components/Logo";
 
 export function Header() {
@@ -62,6 +63,15 @@ export function Header() {
         </nav>
 
         <div className="hidden items-center gap-4 lg:flex">
+          <a
+            href={INSTAGRAM_URL}
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Instagram de Iris Pleyade"
+            className="flex h-10 w-10 items-center justify-center rounded-full border border-gold-light/20 text-gold-light transition-colors hover:bg-gold-light/10 focus-visible:ring-2 focus-visible:ring-gold-light"
+          >
+            <Icon name="instagram" className="h-4 w-4" />
+          </a>
           <span className="text-[10px] font-bold tracking-[0.2em] text-gold-light">
             ES
           </span>
@@ -125,6 +135,15 @@ export function Header() {
             className="gold-button mt-5 flex w-full justify-center py-3.5 text-xs"
           >
             Regala un masaje
+          </a>
+          <a
+            href={INSTAGRAM_URL}
+            target="_blank"
+            rel="noreferrer"
+            className="mt-3 flex items-center justify-center gap-2 rounded-full border border-gold-light/20 px-5 py-3 text-xs font-bold uppercase tracking-[0.18em] text-gold-light transition-colors hover:bg-gold-light/10"
+          >
+            <Icon name="instagram" className="h-4 w-4" />
+            Instagram
           </a>
         </nav>
       </div>

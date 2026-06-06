@@ -1,5 +1,12 @@
 import { Logo } from "@/components/Logo";
-import { MAPS_URL, WHATSAPP_URL, navItems, site } from "@/data/site";
+import { Icon } from "@/components/Icons";
+import {
+  INSTAGRAM_URL,
+  MAPS_URL,
+  WHATSAPP_URL,
+  navItems,
+  site,
+} from "@/data/site";
 
 export function Footer() {
   return (
@@ -43,6 +50,15 @@ export function Footer() {
             className="mt-3 block text-xs text-cream/70 transition-colors hover:text-gold-light"
           >
             WhatsApp: {site.phone}
+          </a>
+          <a
+            href={INSTAGRAM_URL}
+            target="_blank"
+            rel="noreferrer"
+            className="mt-3 flex w-fit items-center gap-2 text-xs text-cream/70 transition-colors hover:text-gold-light"
+          >
+            <Icon name="instagram" className="h-4 w-4" />
+            Instagram
           </a>
           <a
             href={MAPS_URL}

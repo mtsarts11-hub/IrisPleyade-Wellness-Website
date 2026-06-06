@@ -11,7 +11,7 @@ export function About() {
       className="relative overflow-hidden border-y border-gold-light/10 bg-gold-light/[0.025] py-24 sm:py-32"
     >
       <CelestialOrnament
-        variant="constellation"
+        variant="sparkles"
         className="-right-24 top-10 h-72 w-72 opacity-35"
       />
       <SectionCosmos variant="about" />

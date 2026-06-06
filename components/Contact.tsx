@@ -11,7 +11,7 @@ export function Contact() {
   return (
     <section id="contacto" className="section-space relative overflow-hidden">
       <CelestialOrnament
-        variant="constellation"
+        variant="sparkles"
         className="-left-20 top-14 h-64 w-64 opacity-30"
       />
       <SectionCosmos variant="contact" />

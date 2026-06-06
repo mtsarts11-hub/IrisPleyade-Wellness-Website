@@ -2,40 +2,38 @@ import Image from "next/image";
 import type { CSSProperties } from "react";
 import { BOOKING_URL } from "@/data/site";
 
-const orbitStars = [
-  [7, 26, "✦", 10],
-  [18, 9, "✧", 12],
-  [42, 3, "✦", 9],
-  [69, 10, "✦", 11],
-  [88, 28, "✧", 13],
-  [96, 56, "✦", 10],
-  [83, 82, "✧", 12],
-  [55, 95, "✦", 9],
-  [24, 89, "✦", 11],
-  [4, 62, "✧", 13],
+const heroSparkles = [
+  [8, 28, "✦", 10],
+  [18, 11, "✧", 12],
+  [40, 7, "✦", 9],
+  [68, 13, "✦", 11],
+  [86, 31, "✧", 13],
+  [94, 57, "✦", 10],
+  [80, 82, "✧", 12],
+  [56, 92, "✦", 9],
+  [24, 86, "✦", 11],
+  [7, 64, "✧", 13],
+  [72, 43, "✦", 14],
+  [34, 39, "✧", 12],
 ];
 
-function OrbitSystem({ className = "" }: { className?: string }) {
+function HeroSparkles({ className = "" }: { className?: string }) {
   return (
-    <div aria-hidden="true" className={`hero-orbit-system ${className}`}>
-      <span className="hero-orbit-ring hero-orbit-ring--outer" />
-      <span className="hero-orbit-ring hero-orbit-ring--middle" />
-      <span className="hero-orbit-ring hero-orbit-ring--inner" />
-      <span className="hero-orbit-path hero-orbit-path--one" />
-      <span className="hero-orbit-path hero-orbit-path--two" />
-      <span className="hero-orbit-moon">☾</span>
-      {orbitStars.map(([x, y, symbol, duration], index) => (
+    <div aria-hidden="true" className={`hero-sparkle-field ${className}`}>
+      <span className="hero-soft-glow hero-soft-glow--one" />
+      <span className="hero-soft-glow hero-soft-glow--two" />
+      {heroSparkles.map(([x, y, symbol, duration], index) => (
         <span
           key={`${x}-${y}`}
-          className={`hero-orbit-star ${
-            index % 3 === 0 ? "hero-orbit-star--large" : ""
+          className={`hero-sparkle ${
+            index % 3 === 0 ? "hero-sparkle--large" : ""
           }`}
           style={
             {
-              "--orbit-x": `${x}%`,
-              "--orbit-y": `${y}%`,
-              "--orbit-duration": `${duration}s`,
-              "--orbit-delay": `${index * -0.8}s`,
+              "--hero-sparkle-x": `${x}%`,
+              "--hero-sparkle-y": `${y}%`,
+              "--hero-sparkle-duration": `${duration}s`,
+              "--hero-sparkle-delay": `${index * -0.8}s`,
             } as CSSProperties
           }
         >
@@ -73,7 +71,7 @@ export function Hero() {
       <div className="absolute inset-0 hidden lg:block">
         <div className="hero-desktop-portrait">
           <Image
-            src="/images/hero-iris-hq-v2.jpg"
+            src="/images/hero-iris-hq-v3.jpg"
             alt="Mujer disfrutando de un momento de bienestar y calma"
             fill
             quality={95}
@@ -85,7 +83,7 @@ export function Hero() {
         <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(247,240,231,.98)_0%,rgba(247,240,231,.94)_36%,rgba(247,240,231,.55)_53%,rgba(247,240,231,.05)_72%,transparent_100%)]" />
       </div>
 
-      <OrbitSystem className="hero-orbit-system--portrait hero-desktop-orbit hidden h-[700px] w-[700px] opacity-90 lg:block" />
+      <HeroSparkles className="hero-sparkles--portrait hero-desktop-sparkles hidden h-[700px] w-[700px] opacity-90 lg:block" />
 
       <div className="relative z-10 mx-auto flex min-h-[790px] max-w-7xl items-start px-5 pb-12 pt-12 sm:px-8 lg:min-h-[790px] lg:items-center lg:pb-24 lg:pt-16">
         <div className="w-full max-w-[650px]">
@@ -122,7 +120,7 @@ export function Hero() {
 
           <figure className="relative mt-9 aspect-[4/5] overflow-hidden rounded-[9rem_9rem_1.5rem_1.5rem] border border-gold-light/20 bg-ink-soft shadow-gold-soft lg:hidden">
             <Image
-              src="/images/hero-iris-hq-v2.jpg"
+              src="/images/hero-iris-hq-v3.jpg"
               alt="Mujer disfrutando de un momento de bienestar y calma"
               fill
               quality={95}
@@ -130,7 +128,7 @@ export function Hero() {
               sizes="800px"
               className="object-cover object-[72%_center]"
             />
-            <OrbitSystem className="hero-orbit-system--portrait -left-[12%] top-[4%] h-[112%] w-[130%] opacity-80" />
+            <HeroSparkles className="hero-sparkles--portrait -left-[12%] top-[4%] h-[112%] w-[130%] opacity-80" />
           </figure>
         </div>
       </div>

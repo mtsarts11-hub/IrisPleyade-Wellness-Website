@@ -9,8 +9,6 @@ export function Experiences() {
       id="experiencias"
       className="cosmic-bg relative overflow-hidden border-y border-gold-light/10 py-24 sm:py-32"
     >
-      <div className="pointer-events-none absolute left-1/2 top-24 h-[420px] w-[420px] -translate-x-1/2 rounded-full border border-gold-light/10" />
-      <div className="pointer-events-none absolute left-1/2 top-16 h-[540px] w-[540px] -translate-x-1/2 rounded-full border border-gold-light/[0.05]" />
       <SectionCosmos variant="experiences" />
       <div className="relative mx-auto max-w-7xl px-5 sm:px-8">
         <SectionHeading

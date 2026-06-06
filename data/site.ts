@@ -1,5 +1,6 @@
 export const BOOKING_URL = "https://example.simplybook.me";
 export const WHATSAPP_URL = "https://wa.me/34642749135";
+export const INSTAGRAM_URL = "https://www.instagram.com/irispleyade/";
 export const MAPS_URL =
   "https://www.google.com/maps/search/?api=1&query=C%2F%20de%20Bail%C3%A8n%2C%204%2C%20Extramurs%2C%2046007%20Val%C3%A8ncia%2C%20Valencia%2C%20Espa%C3%B1a";
 
@@ -28,7 +29,6 @@ export const navItems = [
 
 export type IconName =
   | "hands"
-  | "moon"
   | "sparkles"
   | "leaf"
   | "family"
@@ -38,6 +38,7 @@ export type IconName =
   | "clock"
   | "map"
   | "message"
+  | "instagram"
   | "whatsapp";
 
 export const services: {
@@ -58,7 +59,7 @@ export const services: {
     description:
       "Técnica manual enfocada en aliviar molestias musculares, mejorar la movilidad y favorecer el bienestar físico.",
     duration: "60–90 min",
-    icon: "moon",
+    icon: "hands",
   },
   {
     name: "Reiki",
@@ -224,7 +225,7 @@ export const experiences: {
     featured: true,
   },
   {
-    name: "Ritual Cósmico Iris Pleyade",
+    name: "Ritual Holístico Iris Pleyade",
     eyebrow: "Experiencia signature",
     features: [
       "Masaje consciente",

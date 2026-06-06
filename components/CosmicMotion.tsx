@@ -3,19 +3,24 @@
 import { useEffect, type CSSProperties } from "react";
 
 const stars = [
-  [6, 12, 2, 7],
-  [15, 29, 1, 9],
-  [24, 76, 2, 8],
-  [39, 57, 2, 10],
-  [54, 36, 2, 7],
-  [62, 81, 1, 9],
-  [21, 48, 1, 8],
-  [34, 88, 2, 9],
-  [44, 69, 1, 7],
-  [79, 89, 1, 7],
-  [89, 45, 2, 11],
-  [4, 61, 1, 8],
-  [72, 5, 1, 7],
+  [6, 12, 2, 9],
+  [15, 29, 1, 11],
+  [24, 76, 2, 10],
+  [39, 57, 2, 12],
+  [54, 36, 2, 9],
+  [62, 81, 1, 11],
+  [21, 48, 1, 10],
+  [34, 88, 2, 11],
+  [44, 69, 1, 9],
+  [79, 89, 1, 10],
+  [89, 45, 2, 13],
+  [4, 61, 1, 10],
+  [72, 5, 1, 9],
+  [93, 18, 2, 12],
+  [67, 64, 1, 11],
+  [12, 91, 1, 13],
+  [50, 14, 2, 12],
+  [83, 72, 1, 10],
 ];
 
 const sparkleStars = [
@@ -26,6 +31,10 @@ const sparkleStars = [
   [74, 27, 16, 14],
   [86, 68, 12, 10],
   [95, 12, 15, 16],
+  [18, 72, 10, 14],
+  [39, 25, 9, 13],
+  [68, 9, 11, 15],
+  [91, 88, 13, 16],
 ];
 
 export function CosmicMotion() {
@@ -86,9 +95,6 @@ export function CosmicMotion() {
 
   return (
     <div aria-hidden="true" className="cosmic-motion">
-      <span className="cosmic-backdrop-orbit cosmic-backdrop-orbit--one" />
-      <span className="cosmic-backdrop-orbit cosmic-backdrop-orbit--two" />
-      <span className="cosmic-backdrop-orbit cosmic-backdrop-orbit--three" />
       <div className="cosmic-starfield cosmic-starfield--far">
         {stars.map(([x, y, size, duration], index) => (
           <span
@@ -143,7 +149,6 @@ export function CosmicMotion() {
           />
         ))}
       </div>
-      <span className="cosmic-comet cosmic-comet--one" />
     </div>
   );
 }
